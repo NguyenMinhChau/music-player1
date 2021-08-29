@@ -1,0 +1,251 @@
+:root{
+    --primary-color: #ff3838;
+    --text-color: #000;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family:'Times New Roman', Times, serif;
+    background-color: #fff;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+body::-webkit-scrollbar{
+    width: 7px;
+}
+body::-webkit-scrollbar-track{
+    box-shadow: inset 0px 0px 6px rgba(0,0,0,0.03);
+}
+body::-webkit-scrollbar-thumb{
+    background-color: darkgray;
+    outline: 1px solid slategrey;
+}
+/* KHUNG CHỨA TẤT CẢ */
+.player {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+}
+.repeat-icon,
+.prev-icon,
+.next-icon,
+.random-icon,
+.btn-toggle-play,
+.song{
+    cursor: pointer;
+    padding: 12px;
+}
+.song:hover{
+    opacity: 0.9;
+}
+.more-icon:hover{
+    color: rgb(226, 226, 226);
+}
+
+.player .icon-pause {
+    display: none;
+}
+
+.player.playing .icon-pause {
+    display: block;
+}
+
+.player.playing .icon-play {
+    display: none;
+}
+
+.dashboard {
+    padding: 16px 16px 14px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 480px;
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.12);
+    z-index: 3;
+}
+.dashboard-h5{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    color: #000;
+}
+.zing{
+    background: linear-gradient(to right, #18A1E2, #3da337,#f88837, #F53A80);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header h4 {
+    color: var(--primary-color);
+    font-size: 15px;
+}
+
+header h2 {
+    color: var(--text-color);
+    font-size: 20px;
+    margin-top: 6px;
+    text-transform: capitalize;
+}
+
+/* ĐĨA CD */
+.cd {
+    width: 200px;
+    margin: auto;
+}
+.cd-thumb {
+    /* DÙNG ĐỂ PHÓNG TO / THU NHỎ KHI SCROLL PLAYLIST */
+    padding-top: 100%;
+    /* width: 200px;
+    height: 200px; */
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0 10px 0;
+}
+
+.control .btn {
+    color: #666;
+    padding: 18px;
+    font-size: 18px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.control .btn.active {
+    color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+    width: 55px;
+    height: 55px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-random.active,
+.btn-repeat.active {
+    color: var(--primary-color);
+}
+
+.progress {
+    width: 100%;
+    overflow: hidden;
+    /* Làm cho nút kéo trong suốt */
+    -webkit-appearance: none; 
+    height: 6px;
+    background: #e2e2e2;
+    background: linear-gradient(to right, rgba(24, 162, 226, 0.377), rgba(60, 163, 55, 0.377),rgba(248, 136, 55, 0.377), rgba(245, 58, 127, 0.377));
+    outline: none;
+    border: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    border-radius: 5px;
+}
+.progress:hover::-webkit-slider-thumb {
+    background: var(--primary-color);
+    box-shadow: -500px 0 0 500px var(--primary-color);
+}
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 12px;
+    height: 6px;
+    background: var(--primary-color);
+    box-shadow: -500px 0 0 500px var(--primary-color);
+}
+
+.playlist {
+    padding: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 450px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+}
+
+.song {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    background: linear-gradient(to right, rgba(24, 162, 226, 0.377), rgba(60, 163, 55, 0.377),rgba(248, 136, 55, 0.377), rgba(245, 58, 127, 0.377));
+}
+
+.song.active {
+    background-color: var(--primary-color);
+}
+
+.song.active .title,
+.song.active .author,
+.song.active .option {
+    color: #fff;
+}
+.title{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+}
+
+.song .thumb {
+    width: 46px;
+    height: 46px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin: 0 8px;
+}
+.song .body {
+    flex: 1;
+    padding: 0 16px;
+}
+
+.song .title {
+    margin-bottom: 4px;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.song .author {
+    font-size: 12px;
+    color: rgb(117, 117, 117);
+    font-weight: 550;
+}
+
+.song .option {
+    padding: 16px 8px;
+    color: #fff;
+    font-size: 18px;
+}

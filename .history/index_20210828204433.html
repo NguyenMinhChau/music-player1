@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="icon" href="https://img.freepik.com/free-vector/music-equalizer-purple-gradient_1172-753.jpg?size=338&ext=jpg">
+    <link rel="stylesheet" href="./asset/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./asset/css/main.css">
+</head>
+
+<body>
+    <div class="player">
+        <div class="dashboard">
+            <header>
+                <h4>My Music - Now Playing</h4>
+                <h2>Music Player</h2>
+            </header>
+            <div class="cd">
+                <div class="cd-thumb" style="
+                background-image: url('./asset/img/1.png');"></div>
+            </div>
+            <div class="control">
+                <div class="btn btn-repeat" title="Loop">
+                    <i class="repeat-icon fas fa-undo-alt"></i>
+                </div>
+                <div class="btn btn-prev" title="Prev">
+                    <i class="prev-icon fas fa-step-backward"></i>
+                </div>
+                <div class="btn btn-toggle-play">
+                    <i class="fas fa-pause icon-pause" title="Pause"></i>
+                    <i class="fas fa-play icon-play" title="Play"></i>
+                </div>
+                <div class="btn btn-next" title="Next">
+                    <i class="next-icon fas fa-step-forward"></i>
+                </div>
+                <div class="btn btn-random" title="Random">
+                    <i class="random-icon fas fa-random"></i>
+                </div>
+            </div>
+            <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100" />
+            <h5 class="dashboard-h5">Bảng Xếp Hạng <span class="zing">My Music</span> <span id="year"></span></h5>
+            <audio  id="audio" src=""></audio>
+        </div>
+        <div class="playlist"></div>
+    </div>
+    <script src="./asset/js/main.js"></script>
+</body>
+
+</html>
